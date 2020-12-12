@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/nav.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../CSS/index.css">
+    <script src="../JS/fontawsome.js"></script>
+    <title>Project</title>
+</head>
+
+<body>
+    <div class="nav-wrapper">
+        <nav class="nav">
+            <div class="bard-logo">
+                <i class="fas icus fa-bars"></i>
+            </div>
+            <div class="links">
+                <div class="icons">
+                    <i class="fas icus fa-map-marker-alt"></i>
+                    <i class="fas icus fa-bell"></i>
+                    <i class="far icus fa-calendar-alt"></i>
+                    <i class="fas icus fa-question"></i>
+                    <i class="fas icus fa-expand full_screen" title="Full Screen"></i>
+                </div>
+                <div class="user-info">
+                    <span class="username">Hello, User <i class="fas fa-chevron-down"></i></span>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="asset-maintenance">
+        <span class="asset-txt">Asset Maintenance</span>
+    </div>
+
+    <div class="icons-breadcrumbs">
+        <div class="bread-crumb">
+            <h2>Asset Maintenance</h2>
+            <ul class="bread-crumb-ul">
+                <li class="bread-crumb-li">
+                    <a href="#" class="breadcrumb-link">Home</a>
+                </li>
+                <li class="bread-crumb-li">
+                    <a href="#" class="breadcrumb-link breadcrumb-link-active">Asset Maintenance</a>
+                </li>
+            </ul>
+            <div class="float-right-contents">
+                <i class="fas fa-qrcode" onclick="window.open('./search_qr_code.html','_self')"><span class="tooltiptext">Qr code</span></i>
+                <i class="fas fa-history" onclick="gotoimportlogs()"><span class="tooltiptext">Import Logs</span></i>
+                <i class="fas fa-upload" onclick="bulkupload()"><span class="tooltiptext">Bulk Upload</span></i>
+                <i class="fas fa-table" onclick="gotohome()"><span class="tooltiptext">Grid View</span></i>
+                <i class="fas fa-sitemap" onclick="change_display()"><span class="tooltiptext">Tree View</span></i>
+                <button class="grp" onclick="window.open('./add_asset.html','_self')">Add Asset</button>
+            </div>
+            <div class="tree-view-links">
+                <a href="./customer.html" class="main-links">Customer</a><br>
+                <a href="./manufacturer.html" class="main-links">Manufacturer</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="tree-view-customer">
+            <table>
+                <tr>
+                    <th>Customer</th>
+                    <th>Asset</th>
+                    <th>Model</th>
+                    <th>Manufacturer</th>
+                    <th>Asset Id</th>
+                    <th>Location</th>
+                </tr>
+                <tr>
+                    <td colspan="6" id="customer">No record(s) found</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="bg-modal">
+        <div class="modal">
+            <div class="topic">
+                <p>Bulk Upload Asset with Asset Id</p>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="topic-required-details">
+                <p>Upload Note<span>&nbsp;*</span></p><input type="text" name="upload_note" id="upload_note"
+                    placeholder="Upload Note" autocomplete="off" required><span></span>
+                <p>Upload File<span>&nbsp;*</span></p><input type="text" name="upload_file" id="upload_file"
+                    placeholder="Upload File" autocomplete="off" required>
+                <div class="file-btn-ui">
+                    <input type="file" id="file" accept=".xls,.xlsx" />
+                    <label for="file"><i class="fas fa-paperclip"></i></label>
+                </div>
+                <span></span>
+                <div class="split-it-again">
+                    <i class="fas fa-file-upload"></i>
+                    <p>Note : File format (XLS,XLSX) and File size is maximum 20MB</p>
+                </div>
+                <span></span>
+                <span></span>
+                <div class="split-it-for-btns">
+                    <input type="button" value="Cancel" id="cancel_btn">
+                    <input type="button" value="Import">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="../JS/index.js"></script>
+
+</html>
